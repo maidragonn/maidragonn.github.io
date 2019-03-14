@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/assets/jquery.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+<style>
+body {
+  font-family: 'Markazi Text', serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background:rgba(10,14,64,1);
+}
+ul {
+      padding: 10px;
+      background: rgba(20,59,300,1);
+      text-align: center;
+}
+li {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Markazi Text', serif;
+  text-align: center;
+  font-size: 75px;
+  color: #faa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #adde;
+  margin: 0px 0 70px 0;
+  font-family: 'Markazi Text', serif;
+  font-size: 50px;
+}
+p {
+  color: rgba(55,20,25,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(2,0,0,1), rgba(4,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(150,50,70,1), rgba(2,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(5,0,0,1), rgba(2,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+  font-family: 'Markazi Text', serif;
+}
+small {
+  opacity: 0;
+  color: rgba(250,164,64,1);
+  font-family: 'Markazi Text', serif;
+  font-size: 20px;
+}
+.show-description p {
+  height: 150px;
+}
+.show-description small {
+  opacity: 1;
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+</style>
+ <ul>
+      <li><button onclick=appetizer()>Appetizer</button></li>
+      <li><button onclick=entree()>Entree</button></li>
+      <li><button onclick=dessert()>Dessert</button></li>
+    </ul>
+</head>
+
+
+   
+
+<body>
+<h1>Good Eats</h1>
+<h2>Great food </h2>
+
+<div id="food">
+
+</div>
+
+<script>
+appetizerImages = [
+  'url("https://tipbuzz.com/wp-content/uploads/RITZ-Shrimp-Avocado-e1540351799929.jpg")',
+   'url("https://assets.marthastewart.com/styles/wmax-350/d14/edf_bruschetta/edf_bruschetta_sq.jpg?itok=jLedOTv-")',
+   'url("https://d1bjorv296jxfn.cloudfront.net/s3fs-public/styles/recipes_header_image/public/1403_ItalianPalmiers.jpg?itok=tcEcZSQ0")',
+]
+entreeImages = [
+  'url("http://bostonmarketathome.com/files/cache/d61c306942f12bb930b8376d25a2cc1a_f1135.jpg")',
+  'url("https://www.gannett-cdn.com/-mm-/b1ab0df35e0cacddf34f06ed9822b038a65c2afb/c=494-0-4404-2940/local/-/media/2018/05/09/Cincinnati/Cincinnati/636614865798290641-050918-WOODHOUSE-579.jpg?width=534&height=401&fit=crop")',
+  'url("https://thumbs.dreamstime.com/thumblarge_345/3451384.jpg")',
+]
+dessertImages = [
+  'url("http://nolond.com/wp-content/uploads/2016/10/tencacles_waffle.jpg")',
+  'url("http://nolond.com/wp-content/uploads/2016/10/eatible_heart.jpg")',
+  'url("http://nolond.com/wp-content/uploads/2016/10/pirates_cake.jpg")',
+]
+  
+appetizerDivs = [
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>surprise <span class="price">$10</span><br /><small> delsih </small></p></div>',
+
+  '<div class="item"onclick=this.classList.toggle("show-description")><p> yummy<span class="price">$5</span><br /><small> d e l i s h </small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>yum <span class="price">$2</span><br /><small>Soft delish <small></p></div>',
+]
+entreeDivs = [
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>spicey<span class="price">$10</span><br /><small> too many calories.</small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>assburgers<span class="price">$21</span><br /><small> long wait </small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>yum <span class="price">$30</span><p><small> organic asf</small></p></div>',
+]
+dessertDivs = [
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>Roll <span class="price">$3</span><br /><small>lots of calories</small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>die pie<span class="price">$10</span><br /><small>stop yo heart.</small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>Caramel or Candy Apple<span class="price">$20</span><br /><small>whatever filling ya want</small></p></div>',
+]
+  
+  
+function appetizer() {
+  foods=document.getElementById("food")
+  foods.innerHTML=''
+  foods.innerHTML+=appetizerDivs[0]
+  foods.innerHTML+=appetizerDivs[1]
+  foods.innerHTML+=appetizerDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = appetizerImages[i]
+		items[i].style.backgroundSize = '100% 120%'
+  }
+}
+  
+function entree() {
+	foods=document.getElementById("food")
+	foods.innerHTML=''
+  foods.innerHTML+=entreeDivs[0]
+  foods.innerHTML+=entreeDivs[1]
+  foods.innerHTML+=entreeDivs[2]
+	items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = entreeImages[i]
+		items[i].style.backgroundSize = '120% 100%'
+  }
+}
+		
+function dessert() {
+	foods=document.getElementById("food")
+	foods.innerHTML=''
+  foods.innerHTML+=dessertDivs[0]
+  foods.innerHTML+=dessertDivs[1]
+  foods.innerHTML+=dessertDivs[2]
+	items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = dessertImages[i]
+		items[i].style.backgroundSize = '100% 120%'
+  }
+}
+</script>
+
+</body>
