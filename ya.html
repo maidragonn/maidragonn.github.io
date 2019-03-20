@@ -99,7 +99,7 @@ small {
       <li><button onclick=appetizer()>Appetizer</button></li>
       <li><button onclick=entree()>Entree</button></li>
       <li><button onclick=dessert()>Dessert</button></li>
-    </ul>
+      <li><button onclick=drink()>Drink</button></li>    </ul>
 </head>
 
 
@@ -129,6 +129,13 @@ dessertImages = [
   'url("http://nolond.com/wp-content/uploads/2016/10/eatible_heart.jpg")',
   'url("http://nolond.com/wp-content/uploads/2016/10/pirates_cake.jpg")',
 ]
+drinkDivs = [
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>Roll <span class="price">$3</span><br /><small>lots of calories</small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>die pie<span class="price">$10</span><br /><small>stop yo heart.</small></p></div>',
+  
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>Caramel or Candy Apple<span class="price">$20</span><br /><small>whatever filling ya want</small></p></div>',
+]
   
 appetizerDivs = [
   '<div class="item"onclick=this.classList.toggle("show-description")><p>surprise <span class="price">$10</span><br /><small> delsih </small></p></div>',
@@ -144,12 +151,12 @@ entreeDivs = [
   
   '<div class="item"onclick=this.classList.toggle("show-description")><p>yum <span class="price">$30</span><p><small> organic asf</small></p></div>',
 ]
-dessertDivs = [
-  '<div class="item"onclick=this.classList.toggle("show-description")><p>Roll <span class="price">$3</span><br /><small>lots of calories</small></p></div>',
+drinkDivs = [
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>bubbly <span class="price">$3</span><br /><small>lots of calories</small></p></div>',
   
-  '<div class="item"onclick=this.classList.toggle("show-description")><p>die pie<span class="price">$10</span><br /><small>stop yo heart.</small></p></div>',
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>spicey<span class="price">$1</span><br /><small>stop yo heart.</small></p></div>',
   
-  '<div class="item"onclick=this.classList.toggle("show-description")><p>Caramel or Candy Apple<span class="price">$20</span><br /><small>whatever filling ya want</small></p></div>',
+  '<div class="item"onclick=this.classList.toggle("show-description")><p>sweet<span class="price">$2</span><br /><small>whatever filling ya want</small></p></div>',
 ]
   
   
